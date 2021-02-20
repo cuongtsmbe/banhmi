@@ -1,0 +1,70 @@
+.slide_trangchu{
+    margin-top:70px;
+    width:100%;
+    height:500px;
+}
+.slide_header{
+    height:100%;
+    width:100%;
+}
+.slide_header .sli{
+ width: 100%;
+ height:100%;
+}
+.sli_2,.sli_3,.sli_4{
+    display: none;
+}
+.sli{
+    position: relative;
+}
+.thongtin_slide{
+    position:absolute;
+    margin-top:250px;
+    margin-left:50px;
+    height:150px;
+    width:400px;
+    border:0.1px solid black;
+    opacity: 0.8;
+    background-color: white;
+    z-index: 100;
+    padding:20px;
+}
+.content_price_sli input{
+    font-weight:bold;
+    font-size:14px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:  #69a3f0; 
+    width: 90px; 
+    height:40px;
+    border:0.1px solid black;
+}
+.silde_out_up{animation:fading 10s infinite}
+@keyframes fading{
+    0%{opacity:0}
+    50%{opacity:1}
+    100%{opacity:0}
+}
+
+@media only screen and (max-width : 800px) {
+    .slide_header .sli{
+        width: 100%;
+        height:400px;
+    }
+    .thongtin_slide{
+        margin-top:150px;
+        margin-left:50px;
+        height:100px;
+        width:200px;
+    }
+    .slide_header{
+        height:400px;
+    }
+    .slide_trangchu{
+        height:300px;
+    }
+    .content_price_sli input{
+        width: 60px; 
+        height:30px;
+        font-size:12px;
+    }
+}

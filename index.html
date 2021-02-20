@@ -1,0 +1,491 @@
+<html>
+<head>
+    <title>Cuong_21/12/2020 20h33...</title>
+    <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/dottie-food/24/food_015-sandwich-banh_mi-bread-fast_food-512.png">
+    <link rel="stylesheet" href="BM.css">
+    <link rel="stylesheet" href="lienhe.css">
+    <link rel="stylesheet" href="gioi_thieu_trangchu.css">
+    <link rel="stylesheet" href="slide.js">
+    <link rel="stylesheet" href="slide.css">
+    <link rel="stylesheet" href="admin_login.css">
+    <script src="BM.js"></script>
+</head>
+<body onscroll="scrollFunction()">
+    
+    <header>
+        <div class="sign_card">
+            
+            <div class="header_center">
+                <div>
+                   
+                    <div class="header_div_trangchu">
+                        <div id="quanly_thongtin_admin">
+                            <a style="font-size:17px; cursor: pointer;"  onclick="open_admin_user_inf_div()">Q_Y</a>
+                        </div>
+                        <div class="header_left" id="name_savelogin">
+                            
+                            <a onclick="show_sign()">LOG_IN</a>
+
+                            <!-- <a class="img_sign_up" href=""><img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11070428.jpg" width="20px " height="20px"></a> -->
+                        </div>
+                        
+                        <ul>
+                            <li><a  class="menu_show_a" onclick="show_menu_reposive()" style="cursor: pointer;">Menu</a></li>
+                            <li>
+                                <a  class="menu_show_a" style="color:rgb(33, 103, 233)" onclick="open_loc_header()">Lọc theo giá  </a>        
+                                    <ul>
+                                        <li>
+                                        
+                                            <ul class="loc_icon_sub" style="padding-top:5px;" id="loc_menu">
+                                                <li><a onclick="increment_function()" id="li_tang">Tăng dần theo giá</a></li>
+                                                <li><a onclick="Descending_function()" id="li_giam">Giảm dần theo giá</a></li>
+                                                <li><a >Min-price: <input type="number" onkeyup="search_function(100)" id="price_start_header"></a></li>
+                                                <li><a >Max-price: <input type="number" onkeyup="search_function(100)" id="price_end_header"></a></li>
+                                            </ul>
+                                        </li>
+                                        
+                                    </ul>
+                           </li>
+                            <!-- <li><a href="#">TRANG CHU</a></li> -->
+                            <li><a href="#" onclick="show_trang(2)">TRANG CHU</a></li>
+                            <li><a href="#" onclick="show_trang(0)">SAN PHAM</a></li>
+                            <li><a href="#" onclick="show_trang(1)">LIEN HE</a></li>
+                        
+                        </ul>
+                        <div class="header_right">
+                            <ul>
+                                <li style="width:auto;padding:0px 5px"><span ><b style="width:auto">$<span id="money_card">.</span> vnd</span></b></li>
+                                <li><div id="img_cart" onclick="show_close_cart();display_cart()"><img src="https://cdn0.iconfinder.com/data/icons/shopping-bag-1/100/37-512.png" width="20px" height="20px"></div></li>
+                                <li><a class="search_1" onclick="open_search()">Search</a></li>
+                                <li id="search_1" style="display: none;"><input id="input_search" type="search" placeholder="search..." name="search_input" onkeyUp="search_function(100)"></li>
+                                <!-- dùng onkeyUp vì nếu dùng onkeyDown thì khi nhấn key thì chưa có giá trị nhập vào mà hàm search_function() đã run -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+       
+    </header>
+    <!-- <div class="sapxep" >
+        <nav>TRANGCHU/SANPHAM</nav>
+    </div> -->
+    <div class="body_sp" id="sp_body" >
+        <div class="div_baoquanh">
+<!-- reposive menu start -->
+            <div class="reposive_menu">
+                <ul >
+                    <li>
+                        
+                        <ul class="sub_menu" id="menu_res">
+                        <li><a  onclick="search_function(30);" id="menu_so_30" ># Ăn Kiêng | Diet</a></li>
+                        <li><a  onclick="search_function(31);" id="menu_so_31" ># Combo</a></li>
+                        <li><a  onclick="search_function(32);" id="menu_so_32" ># Detox | Eat Clean</a></li>
+                        <li><a  onclick="search_function(33);" id="menu_so_33" >Bánh Bơ-gơ | Buns</a><a style="float:right;display:block" class="a_icon_top" id="st1" onclick="open_sublist_header(1)" ></a>
+                            <ul class="sub_menu" id="list1_menu" >
+                                <li><a  onclick="search_function(34);" id="menu_so_34" >Baby Canxi Buns</a></li>
+                                <li><a  onclick="search_function(35);" id="menu_so_35" >Hot Cross Buns</a></li>
+                                <li><a  onclick="search_function(36);" id="menu_so_36" >Takesumi Buns</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a  onclick="search_function(37);" id="menu_so_37" >Bánh Kem | Cake</a><a style="float:right;display:block" class="a_icon_top" id="st2" onclick="open_sublist_header(2)"></a>
+                            <ul class="sub_menu" id="list2_menu">
+                                <li><a onclick="search_function(38);" id="menu_so_38" >American Apple Pie</a></li>
+                                <li><a onclick="search_function(39);" id="menu_so_39" >Apple Cranberry Tart</a></li>
+                                <li><a onclick="search_function(40);" id="menu_so_40" >New York Cheese Cake</a></li>
+                                <li><a onclick="search_function(41);" id="menu_so_41" >Tiramisu Cake</a></li>
+                            </ul>
+                        </li>
+                        <li><a  onclick="search_function(42);" id="menu_so_42" >Bánh Mì | Bread</a><a style="float:right;display:block" class="a_icon_top" id="st3" onclick="open_sublist_header(3)"></a>
+                            <ul class="sub_menu" id="list3_menu">
+                                <li><a  onclick="search_function(43);" id="menu_so_43" ># Bánh Mì Đen | Rye Bread</a></li>
+                                <li><a  onclick="search_function(44);" id="menu_so_44" ># Bánh Mì Nguyên Cám | Whole Wheat Bread</a></li>
+                                <li><a  onclick="search_function(45);" id="menu_so_45" ># Bánh Mì Tinh Than Tre | Takesumi Bread</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li><a  onclick="search_function(46);" id="menu_so_46" >Bánh Mì Vòng | Bagels</a><a style="float:right;display:block" class="a_icon_top" id="st4" onclick="open_sublist_header(4)"></a>
+                            <ul class="sub_menu" id="list4_menu">
+                                <li><a  onclick="search_function(47);" id="menu_so_47" >Cinnamon Cranberry Bagels</a></li>
+                                <li><a  onclick="search_function(48);" id="menu_so_48" >MultiGrain Bagels</a></li>
+                                <li><a  onclick="search_function(49);" id="menu_so_49" >Pesto Parmesan Bagels</a></li>
+                                <li><a  onclick="search_function(50);" id="menu_so_50" >Rye Caraway Bagels</a></li>
+                                <li><a  onclick="search_function(51);" id="menu_so_51" >Whole Wheat Multiseed Bagels</a></li>
+                            </ul>
+                        </li>
+                        <li><a  onclick="search_function(52);" id="menu_so_52" >Bánh Nướng Nhỏ | Cupcake</a></li>
+                        <li><a  onclick="search_function(53);" id="menu_so_53" >Bánh Ổ Dài | Loaf Cake</a><a style="float:right;display:block" class="a_icon_top" id="st5" onclick="open_sublist_header(5)"></a>
+                            <ul class="sub_menu" id="list5_menu">
+                                <li><a  onclick="search_function(54);" id="menu_so_54" ># Set Mini Loaf Cake</a></li>
+                                <li><a  onclick="search_function(55);" id="menu_so_55" >Banana Walnuts Loaf Cake</a></li>
+                                <li><a  onclick="search_function(56);" id="menu_so_56" >Carrot Loaf Cake</a></li>
+                                <li><a  onclick="search_function(57);" id="menu_so_57" >Cinnamon Raisin Swirl Bread</a></li>
+                            </ul>
+                        </li>
+                        <li><a  onclick="search_function(58);" id="menu_so_58" >Các Loại Khác | Others</a></li>
+                        <li><a  onclick="search_function(59);" id="menu_so_59" >Tinh Dầu | Essential Oil</a></li>
+                       
+                    </ul></li>
+                </ul>
+            </div>
+<!-- end_reposive menu -->
+
+      <div class="topnav" style="height:100%;">
+            <div class="menu" id="menu_id">
+                <aside>
+                    <h3>LOAI BANH</h3>
+                    <ul>
+                        <li><a  onclick="search_function(0);" id="menu_so_0" ># Ăn Kiêng | Diet</a></li>
+                        <li><a  onclick="search_function(1);" id="menu_so_1" ># Combo</a></li>
+                        <li><a  onclick="search_function(2);" id="menu_so_2" ># Detox | Eat Clean</a></li>
+                        <li><a  onclick="search_function(3);" id="menu_so_3" >Bánh Bơ-gơ | Buns</a><a style="float:right;display:block" class="a_icon_top" id="st1" onclick="open_sublist(1)" ></a>
+                            <ul class="sub_menu" id="list1" >
+                                <li><a  onclick="search_function(4);" id="menu_so_4" >Baby Canxi Buns</a></li>
+                                <li><a  onclick="search_function(5);" id="menu_so_5" >Hot Cross Buns</a></li>
+                                <li><a  onclick="search_function(6);" id="menu_so_6" >Takesumi Buns</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a  onclick="search_function(7);" id="menu_so_7" >Bánh Kem | Cake</a><a style="float:right;display:block" class="a_icon_top" id="st2" onclick="open_sublist(2)"></a>
+                            <ul class="sub_menu" id="list2">
+                                <li><a onclick="search_function(8);" id="menu_so_8" >American Apple Pie</a></li>
+                                <li><a onclick="search_function(9);" id="menu_so_9" >Apple Cranberry Tart</a></li>
+                                <li><a onclick="search_function(10);" id="menu_so_10" >New York Cheese Cake</a></li>
+                                <li><a onclick="search_function(11);" id="menu_so_11" >Tiramisu Cake</a></li>
+                            </ul>
+                        </li>
+                        <li><a  onclick="search_function(12);" id="menu_so_12" >Bánh Mì | Bread</a><a style="float:right;display:block" class="a_icon_top" id="st3" onclick="open_sublist(3)"></a>
+                            <ul class="sub_menu" id="list3">
+                                <li><a  onclick="search_function(13);" id="menu_so_13" ># Bánh Mì Đen | Rye Bread</a></li>
+                                <li><a  onclick="search_function(14);" id="menu_so_14" ># Bánh Mì Nguyên Cám | Whole Wheat Bread</a></li>
+                                <li><a  onclick="search_function(15);" id="menu_so_15" ># Bánh Mì Tinh Than Tre | Takesumi Bread</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li><a  onclick="search_function(16);" id="menu_so_16" >Bánh Mì Vòng | Bagels</a><a style="float:right;display:block" class="a_icon_top" id="st4" onclick="open_sublist(4)"></a>
+                            <ul class="sub_menu" id="list4">
+                                <li><a  onclick="search_function(17);" id="menu_so_17" >Cinnamon Cranberry Bagels</a></li>
+                                <li><a  onclick="search_function(18);" id="menu_so_18" >MultiGrain Bagels</a></li>
+                                <li><a  onclick="search_function(19);" id="menu_so_19" >Pesto Parmesan Bagels</a></li>
+                                <li><a  onclick="search_function(20);" id="menu_so_20" >Rye Caraway Bagels</a></li>
+                                <li><a  onclick="search_function(21);" id="menu_so_21" >Whole Wheat Multiseed Bagels</a></li>
+                            </ul>
+                        </li>
+                        <li><a  onclick="search_function(22);" id="menu_so_22" >Bánh Nướng Nhỏ | Cupcake</a></li>
+                        <li><a  onclick="search_function(23);" id="menu_so_23" >Bánh Ổ Dài | Loaf Cake</a><a style="float:right;display:block" class="a_icon_top" id="st5" onclick="open_sublist(5)"></a>
+                            <ul class="sub_menu" id="list5">
+                                <li><a  onclick="search_function(24);" id="menu_so_24" ># Set Mini Loaf Cake</a></li>
+                                <li><a  onclick="search_function(25);" id="menu_so_25" >Banana Walnuts Loaf Cake</a></li>
+                                <li><a  onclick="search_function(26);" id="menu_so_26" >Carrot Loaf Cake</a></li>
+                                <li><a  onclick="search_function(27);" id="menu_so_27" >Cinnamon Raisin Swirl Bread</a></li>
+                            </ul>
+                        </li>
+                        <li><a  onclick="search_function(28);" id="menu_so_28" >Các Loại Khác | Others</a></li>
+                        <li><a  onclick="search_function(29);" id="menu_so_29" >Tinh Dầu | Essential Oil</a></li>
+                    
+                    </ul>
+               
+                </aside>
+                <div class="loc_icon" style='margin-left:10px;width:150px'>
+                    <ul>
+                        <li>
+                            <a  style="color:rgb(33, 103, 233)" onclick="open_loc_gia_block()">Lọc theo giá</a>
+                            <ul class="loc_icon_sub" style="padding-top:5px;" id="loc_sub">
+                                <li><a onclick="increment_function()" id="li_tang_sp">Tăng dần theo giá</a></li>
+                                <li><a onclick="Descending_function()" id="li_giam_sp">Giảm dần theo giá</a></li>
+                                <li><a >Min-price: <input type="number" onkeyup="search_function(100)" id="price_start"></a></li>
+                                <li><a >Max-price: <input type="number" onkeyup="search_function(100)" id="price_end"></a></li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>    
+            <div class="body_sp_list" id="list_body_sp">
+               
+            </div>
+        </div>
+                 
+        </div>
+              
+        <!-- 3119410055 -->
+        <!-- trang lien he -->
+        
+            <div class="map_content" id="map_content_id" style="display: none;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.426811985457!2d106.65313861465522!3d10.778586092320039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ec7aedb7319%3A0xee2415ec2528f46e!2zMTE2LCA2NyBI4bq7bSAyIFRoacOqbiBQaMaw4bubYywgcGjGsOG7nW5nIDksIFTDom4gQsOsbmgsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1607042062702!5m2!1svi!2s" width="1200" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            <form method="POST">
+                <div class="mail_lienhe" id="mail_lienhe_id" style="display: none;">
+                    <div class="mail_lh_content">
+                        <p class="title_lh">Mail cho chúng tôi:</p>
+                        <input id="name_mail_lh" type="text" placeholder="Hoten...">
+                        <input id="name_mail_lh" type="email" placeholder="Mail cua ban...">
+                        
+                        <textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="required" style="margin: 0px 0px 15.5156px; width: 90%; height: 120px; margin-left:10px; border-radius: 5px;"></textarea>
+                        
+                        <input id="button_lh" type="button" value="submit">
+                    </div>
+                </div>
+            </form>
+
+        <!-- end trang_lien_he -->
+
+        <!-- trang chu  -->
+        <div class="slide_trangchu" id="trangchu_id" style="display: none;">
+            <div class="slide_header">
+                <div class="sli sli_1 silde_out_up" style="background-image:url(https://lavitabakery.com/wp-content/uploads/2018/12/A2BD617D-99AF-4D6A-86E2-98E73E8E3D1B-1400x525.jpeg)"></div>
+                <div class="sli sli_2 silde_out_up" style="background-image:url(https://lavitabakery.com/wp-content/uploads/2018/12/B23CA568-4163-4353-A85A-10D9D54685C9-1400x525.jpeg)"></div>
+                <div class="sli sli_3 silde_out_up" style="background-image:url(https://lavitabakery.com/wp-content/uploads/2019/07/7720EC99-CDBF-44E0-9868-5C96800CA6FA-1400x525.jpeg)"></div>
+                <div class="sli sli_4 silde_out_up" style="background-image:url(https://lavitabakery.com/wp-content/uploads/2019/02/D1ED251A-1EC3-405E-9ED7-05DD3A78F500-1400x525.jpeg)"></div>
+
+            </div>
+        </div>
+        <script src="slide.js"></script>
+        <!-- end trang chu -->
+
+
+        <!--Gioi Thieu-->
+
+            <div class="gioi_thieu" id="gioi_thieu_id" style="display: none;">
+                <div class="background_gray" ></div>
+                <div class="bao_quanh_img">
+                    <div class="img_gioi_thieu">
+                        <p style="font-size: 18px; color:white; font-weight:bold;width:900px">Welcome!!
+                            
+                            </p>
+                    </div>
+                    
+                </div>
+                <div class="content_gioi_thieu"><p> Với tiêu chí “QUAN TÂM ĐẾN SỨC KHỎE CỦA BẠN”, La Vita đã nghiên cứu thành công kỹ thuật bổ sung các nguồn dinh dưỡng, Vitamin và các khoáng chất vào trong sản phẩm mà vẫn giữ được bản chất truyền thống của từng chiếc bánh. Nghệ thuật trong việc chế biến đã được Công ty tập trung nghiên cứu cải tiến. Sản phẩm đến tay người tiêu dùng là phải hội đủ các yếu tố như đảm bảo độ thẩm mỹ, chất lượng, an toàn vệ sinh, giá trị dinh dưỡng… Hiện tại, La Vita cung cấp hơn 70 mẫu mã của các dòng bánh mỳ và bánh ngọt đã được công ty đầu tư từ công nghệ đến công thức chế biến.</p></div>
+               
+            </div>
+        <!--End Gioi Thieu-->
+
+        <div class="sanpham_menu_list" id="trang_bottom"></div>  
+
+        <script src="sanpham.js"></script>
+
+
+        <footer>
+            <div class="bao_quanhfooter">
+                <div class="foo_ter">
+                    <table class="foo_tab">
+                        <thead>
+                        <tr  class="tr_header" style="height:60px;">
+                            <td class="td_header">
+                                <div class="div_td_head"><p>LATEST</p><div class="bor_small"></div></div>
+                            </td>
+                            <td class="td_header">
+                                <div class="div_td_head"><p>BEST SELLING</p><div class="bor_small"></div></div>
+                            </td>
+                            <td class="td_header">  
+                                <div class="div_td_head">  <p>ON SALE</p><div class="bor_small"></div></div>
+                            </td>
+                        </tr>
+                        </thead>
+                        
+                        <tbody id="body_sp_ppfooter">
+                        <!-- them sp tu javascript -->
+                        </tbody>
+                    
+                    </table>
+                </div>
+            </div>
+        </footer>
+    <script src="spfooter.js"></script> <!-- để dây để nhận id của body_sp_ppfooter -->
+          
+     <div class="footer_end" >
+        <div class="thongtin_diachi">
+            <div class="thongtin_lienhe">
+                <ul class="thongtin_lh">
+                    <li class="thongtin_footer">
+                        <a>ABOUT</a>
+                    </li>
+                    <li class="thongtin_footer">
+                        <a>NEWS</a>
+                    </li>
+                    <li class="thongtin_footer">
+                        <a>LIÊN HỆ</a>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="address_phong_mail">
+                <p>La Vita Bakery</p>
+                <p>CSSX: 7C1 Đường 66, Phường Tân Phong, Quận 7, TP.HCM</p>
+                <p>Phone: 083 368 4545</p>
+                <p>Mail: manager@lavitabakery.com</p>
+            </div>
+        </div>
+
+        <div class="icon_mail_end">
+            <div class="icon_visa">
+                <div class="icon_end">
+                    <img src="https://image.flaticon.com/icons/png/512/493/493909.png" width="55px" height="40px">
+                </div>
+                <div class="icon_end">
+                    <img src="https://cdn4.iconfinder.com/data/icons/online-payment-methods-02/128/mondex_payment_methods_copy-512.png" width="55px" height="40px">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <!-- back to top -->
+    <button onclick="topFunction()" id="btt"></button>
+
+
+
+    <!-- cart_hang -->
+    <div class="bao_quanh_cart" id="cart_baoquanh" onclick="show_close_cart()">
+        <div id="cart_hang" onclick="show_close_cart()">
+            <p style="width:100%; font-family: 'Courier New', Courier, monospace; font-size:20px;margin:0px;"><b>CART BAKERY</b></p>
+            <table id="table_giohang_bm">
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Title</td>
+                        <td>Price</td>
+                        <td>Number</td>
+                        <td>delete_cart</td>
+                    </tr>
+                </thead>
+
+                <tbody id="add_list">
+                    
+                </tbody>
+                <tfoot  >
+                    <tr>
+                        <td colspan="5" align="right" id="total_fo_price">
+
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+
+
+    <!-- log_in -->
+    <form id="login_cuongbanhmi_form">
+        <div class="sign_up" id="sign_show1" onclick="show_sign()">
+            <div class="sign_up_header" id="log_in_show" onclick="show_sign()">  <!--lúc này display:flex khi click vào sign_up_header thì hàm onclick của sign_up_header chạy ->display:none sau đó onclick() của sign_up sẽ tự động chạy ->display:flex; -->
+                <div class="sign_up_header_content"><p>Log In</p></div>
+                <div class="sign_up_header_content"> 
+                    <input class="text_sign" name="username" id="login_user" type='text' placeholder="username...."></input>
+                </div>
+                <div class="sign_up_header_content">
+                    <input  class="text_sign" name="password" id="login_pw" type='password' placeholder="password...."></input>
+                </div>
+                <div class="sign_up_header_content">
+                    <input type="button" class="button_log_in" value='Cancer' onclick="show_sign_cancer()">
+                    <input type="button"  class="button_log_in" value='sign up' onclick="show_dk_form()">
+                    <input type="submit"  class="button_log_in"  id="login_phc" value='Save'>
+                </div>
+            </div>
+    </form>
+
+    <form id="dk_cuongbanhmi_form">
+            <div class="dk_form" id="dk" onclick="show_sign()">
+                <div class="sign_up_header_content"><p>Sign up</p></div>
+                <div class="sign_up_header_content">
+                    <input  class="text_sign" name="hoten"    id="hoten_id_dk" type='text' placeholder="hoten...."></input>
+                </div>
+                <div class="sign_up_header_content"> 
+                    <input class="text_sign" name="username"  id="username_id_dk" type='text' placeholder="username...."></input>
+                </div>
+                <div class="sign_up_header_content">
+                    <input  class="text_sign" name="password" id="pw_id_dk" type='password' placeholder="password...."></input>
+                </div>
+                <div class="sign_up_header_content">
+                    <input  class="text_sign" name="email"    id="mail_id_dk" type='email' placeholder="email...."></input>
+                </div>
+                <div class="sign_up_header_content">
+                    <input  class="text_sign" name="number_phone" id="number_id_dk" type='number' placeholder="number phone...."></input>
+                </div>
+                <div class="sign_up_header_content">
+                    <input  class="text_sign" name="address" type='text' id="address_id_dk" placeholder="address...."></input>
+                </div>
+                <div class="sign_up_header_content">
+                    <input type="button" class="button_log_in" value='Cancer' onclick="show_sign_cancer()">
+                    <input type="button" class="button_log_in" value='LogIn' onclick="show_dk_form()">
+                    <input type="submit"  class="button_log_in" value='Save'>
+                </div>
+                
+            </div>
+        </div>
+       
+    </form>
+     <!-- <script src="login.js"></script> -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <!-- thư viện để chạy login.js -->
+     <script src="login.js"></script>
+
+
+    <!-- tạo cửa sổ xem thông tin sản phẩm -->
+    <div id="baoquanh_thexem" onclick="show_thongtin('','','','')">
+        <div class="thexem" onclick="show_thongtin('','','','')">
+            <div id="id_the_img">
+                <!-- tên của sp đc thêm bằng js -->
+            </div>
+            <div class="the_thongtin">
+                <div id="the_name"></div>
+                <div id="button_id_thongtin"></div>
+                <div id="the_thanhphan">
+                    <div id="title_thanhphan">
+                        Ingredients :
+                    </div>
+                    <div id="body_thanhphan">
+                            <!-- các thành phần của sp được thêm bằng js -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- QUAN_LY quản lý thông tin login -->
+     <div id="thong_tin_login">
+        
+         
+            <input type="text" id="username_loc" placeholder="username search..." onkeyup="show_inf_admin()">
+            <input type="button" value="Tăng dần" onclick="function_inc_price()">
+            <input type="button" value="Giảm dần" onclick="function_dec_price()">
+       
+        <table id="id_table_thongtin">
+           
+            <thead>
+                <tr><td colspan='9' style="font-weight: bold;color:rgb(247, 8, 48);">username!</td></tr>
+                <tr>
+                    <td>hoten</td>
+                    <td>User_name</td>
+                    <td>password</td>
+                    <td>mail</td>
+                    <td>phone</td>
+                    <td>address</td>
+                    <td>payment</td>
+                    <td>Update</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+           
+            <tbody id="body_table_information">
+                
+            </tbody>
+            <tr  style="height:20px;"><td colspan='9' style="font-weight: bold;color:rgb(247, 8, 48);">Update</td></tr>
+            <tfoot id="update_inf_table" >
+             
+            </tfoot>
+         
+        </table>
+    </div>
+    <!-- end QUAN_LY quản lý thông tin login -->
+    <script src="admin_login.js"></script>
+</body>
+</html>

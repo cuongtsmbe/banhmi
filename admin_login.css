@@ -1,0 +1,30 @@
+#thong_tin_login{
+    margin-top:50px;
+    height:70%;
+    position:absolute;
+    width:100%;
+    top:50px;
+    left:-5px;
+    background-color:white;
+    display:none;
+    z-index:109;
+    box-shadow: 2px 2px 5px ;
+    overflow-y:scroll;
+    padding:20px;
+    position:fixed;
+}
+#id_table_thongtin td{
+    border:1px solid  rgb(163, 192, 245);
+    width:200px;
+    text-align: center;
+    padding:10px;
+    font-weight: bold;
+    font-size:17px;
+   
+}
+#id_table_thongtin tr{
+    padding-top:20px;
+}
+#quanly_thongtin_admin{
+    display: none;
+}
